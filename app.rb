@@ -1,9 +1,31 @@
 require "sinatra"
 require "sinatra/reloader"
 
-get("/") do
-  "
-  <h1>Welcome to your Sinatra App!</h1>
-  <p>Define some routes in app.rb</p>
-  "
+
+get("/rock") do
+
+  we_play = "rock"
+  they_can_play = ["rock","paper","scissors"]
+  @play = rand(0..2)
+  @they_play = they_can_play[play]
+  
+  erb(:rock)
+end
+
+get("/paper") do
+  we_play = "paper"
+  they_can_play = ["rock","paper","scissors"]
+  @play = rand(0..2)
+  @they_play = they_can_play[play]
+  
+  erb(:paper)
+end
+
+get("/scissors") do
+  we_play = "scissors"
+  they_can_play = ["rock","paper","scissors"]
+  @play = rand(0..2)
+  @they_play = they_can_play[play]
+  
+  erb(:scissors)
 end
